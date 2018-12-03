@@ -22,7 +22,7 @@ void funnel()
     {
 	printf("helloo");
 	int w = 0;
-	for (int k=i; k<0; k--)
+	for (int k=0; k<i; k++)
 	{
  	printf("wt");
 	 if (ch[w] == ',')
