@@ -28,6 +28,7 @@ int main()
  if(fp != 0)
  {
   fprintf(fp, "%s %s\n", name,std_num);   
+  fprintf(fp, "%s %s", name,std_num);   
   fclose(fp);
  }
  else  printf("fail\n");
