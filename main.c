@@ -1,14 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <fcntl.h>
+#include <unistd.h>
 
+#include "funnel_a2.c"
+char** funnel(char* _csvfile);
 int main()
 {
  // input
  char name[100], std_num[20], ch;
  char full_path[150];
  char* p;
+ char (**arr)[28][max] = malloc(sizeof(char *)*28);
+
  FILE *fp = NULL;
+
+ for (int i=0; i<28;i++) {
+	arr[i] = malloc(sizeof(char)*max);
+ }
+ arr = funnel("2018_ese.csv.0");
 
  printf("Enter you NAME :\n"); 
  fgets(name,100, stdin);
