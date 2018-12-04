@@ -1,11 +1,11 @@
 #define max 100000
 
-void funnel(char* _csvfile)
+char** funnel(char* _csvfile)
 {
   int fd;
   char ch[max];
   char minor[28][max];
-  char mi;
+
   fd = open(_csvfile, O_RDWR);
   if (fd == -1)
   {
@@ -15,7 +15,7 @@ void funnel(char* _csvfile)
 
   read(fd, ch, max-1);
   ch[max-1] = '\0';
-  int i = 0, j = 999;
+  int i = 0, j = 999, start = 0, temp = 0;
   while(ch[i] != '\0')
   {
 	if (ch[i] == 'a')
@@ -30,13 +30,18 @@ void funnel(char* _csvfile)
 	if (j!=999)
 	{
 	 int w = 0;
-	 for (int k=0; k<(i-1); k++)
+	 while(minor[j][w] != '\0')
+		w++;
+
+	 for (int k=start; k<(i-1); k++)
 	 {
  	  if (ch[k] == ',')
   	    continue;
 	  minor[j][w] = ch[k];
 	  w++;
+	  temp = i;
 	 }
+	 start = (temp+1);
 	 j = 999;
 	}
    printf("%c", ch[i]);
@@ -44,12 +49,12 @@ void funnel(char* _csvfile)
   }
 
 printf("reading finish. \n");
-int h=0;
+/*int h=0;
 while(minor[3][h] != '\0')
 {
 	printf("%c", minor[3][h]);
 	h++;
 }
-
+*/
 }
 
