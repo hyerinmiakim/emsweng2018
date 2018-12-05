@@ -1,10 +1,11 @@
-#define max 100000
+#define max 10000
+#include <string.h>
 
-char** funnel(char* _csvfile)
+char(*funnel(char* _csvfile))[max]
 {
   int fd;
   char ch[max];
-  char minor[28][max];
+  static char minor[8][max];
 
   fd = open(_csvfile, O_RDWR);
   if (fd == -1)
@@ -35,8 +36,8 @@ char** funnel(char* _csvfile)
 
 	 for (int k=start; k<(i-1); k++)
 	 {
- 	  if (ch[k] == ',')
-  	    continue;
+ 	  //if (ch[k] == ',')
+  	    //continue;
 	  minor[j][w] = ch[k];
 	  w++;
 	  temp = i;
@@ -49,6 +50,7 @@ char** funnel(char* _csvfile)
   }
 
 printf("reading finish. \n");
+return minor;
 /*int h=0;
 while(minor[3][h] != '\0')
 {
