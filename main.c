@@ -50,11 +50,7 @@ int main()
  char(*arr)[max] = funnel("2018_ese.csv.0");
  //char(*info)[max] = get_the_info(NULL,arr);
 
- // for printing arr: (*arr)[0][2]...
-
-
-
-
+ // for printing and handling arr: *arr[0][2]...
 
 
  return 0;
