@@ -7,21 +7,20 @@
 #include <unistd.h>
 
 #include "funnel_a2.c"
-char** funnel(char* _csvfile);
+#include "printinfo.c"
+char(*funnel(char* _csvfile))[max];
+char(*get_the_info(char* _subject, char** _minor))[max];
+
 int main()
 {
  // input
  char name[100], std_num[20], ch;
  char full_path[150];
  char* p;
- char (**arr)[28][max] = malloc(sizeof(char *)*28);
+
 
  FILE *fp = NULL;
 
- for (int i=0; i<28;i++) {
-	arr[i] = malloc(sizeof(char)*max);
- }
- arr = funnel("2018_ese.csv.0");
 
  printf("Enter you NAME :\n"); 
  fgets(name,100, stdin);
@@ -46,5 +45,17 @@ int main()
  }
  else  printf("fail\n");
  
+
+ // call the func named funnel 
+ char(*arr)[max] = funnel("2018_ese.csv.0");
+ //char(*info)[max] = get_the_info(NULL,arr);
+
+ // for printing arr: (*arr)[0][2]...
+
+
+
+
+
+
  return 0;
 }
