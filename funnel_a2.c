@@ -45,18 +45,12 @@ char(*funnel(char* _csvfile))[max]
 	 start = (temp+1);
 	 j = 999;
 	}
-   printf("%c", ch[i]);
+  // printf("%c", ch[i]);
    i++;
   }
 
 printf("reading finish. \n");
 return minor;
-/*int h=0;
-while(minor[3][h] != '\0')
-{
-	printf("%c", minor[3][h]);
-	h++;
-}
-*/
+
 }
 
