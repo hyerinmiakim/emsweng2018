@@ -56,13 +56,18 @@ int main()
  else  printf("fail\n");
  
 
+ gpa(std_num);
+
+
 /* call the functions.
   char *psubj = '\0';
         psubj = subj;
   char(*arr)[max] = funnel("2018_ese.csv.0");
   char(*info2)[max] = get_the_info(psubj, &arr[0]);
 */
- gpa(std_num);
+
+
+
 
 
  // for printing and handling arr: *arr[0][2], info[0][3]
