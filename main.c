@@ -8,6 +8,7 @@
 
 #include "funnel_a2.c"
 #include "printinfo.c"
+#include "gpa.c"
 
 char(*funnel(char* _csvfile))[max];
 char(*get_the_info(char* sub, void *_minor))[max];
@@ -29,11 +30,13 @@ int main()
  printf("Enter your STUDENT NUMBER :\n"); 
  fgets(std_num,20,stdin);
 
+/*
  printf("Enter your subjects : \n");
  fgets(subj,50,stdin);
 
- //printf("Enter your grade : \n");
- //fgets(&grade,2,stdin);
+ printf("Enter your grade : \n");
+ fgets(&grade,2,stdin);
+*/
 
  //remove enter key
  if((p = strchr(name, '\n'))!= NULL)   *p = '\0';
@@ -53,11 +56,13 @@ int main()
  else  printf("fail\n");
  
 
- // call the functions.
+/* call the functions.
   char *psubj = '\0';
         psubj = subj;
   char(*arr)[max] = funnel("2018_ese.csv.0");
   char(*info2)[max] = get_the_info(psubj, &arr[0]);
+*/
+ gpa(std_num);
 
 
  // for printing and handling arr: *arr[0][2], info[0][3]
