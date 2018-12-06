@@ -1,6 +1,6 @@
 #define max 10000
 #include <string.h>
-char info[8][max]; //return array
+char info[8][max]; //return array. it has only info of subject that user wants to know.
 
 char(*get_the_info(char* sub, void *_minor))[max]
 {
@@ -12,7 +12,7 @@ char(*get_the_info(char* sub, void *_minor))[max]
 
 char (*arr)[max];
 arr = _minor;
-int len = strlen(*hyr);
+int len = strlen(sub);
 char str[len]; //for searching
 
 for (int i = 0; i < 400; i++)
