@@ -30,10 +30,10 @@ int main()
  printf("Enter your STUDENT NUMBER :\n"); 
  fgets(std_num,20,stdin);
 
-/*
+
  printf("Enter your subjects : \n");
  fgets(subj,50,stdin);
-
+/*
  printf("Enter your grade : \n");
  fgets(&grade,2,stdin);
 */
@@ -59,18 +59,23 @@ int main()
  gpa(std_num);
 
 
-/* call the functions.
+// call the functions.
   char *psubj = '\0';
         psubj = subj;
   char(*arr)[max] = funnel("2018_ese.csv.0");
-  char(*info2)[max] = get_the_info(psubj, &arr[0]);
-*/
-
-
-
-
+  get_the_info(psubj, &arr[0]);
 
  // for printing and handling arr: *arr[0][2], info[0][3]
+ printf("HI THIS IS FROM MAIN*******************\n");
+        for (int i = 0; i < 8;i++)
+        {
+         for (int j = 0; j < max; j++)
+         {
+                printf("%c", info[i][j]);
+         }
+        printf("\n");
+        }
+
 
  return 0;
 }
