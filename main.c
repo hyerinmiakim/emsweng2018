@@ -9,9 +9,11 @@
 #include "funnel_a2.c"
 #include "printinfo.c"
 #include "gpa.c"
+#include "graduate.c"
 
 char(*funnel(char* _csvfile))[max];
 char(*get_the_info(char* sub, void *_minor))[max];
+void graduate();
 
 int main()
 {
@@ -64,8 +66,9 @@ int main()
         psubj = subj;
   char(*arr)[max] = funnel("2018_ese.csv.0");
   get_the_info(psubj, &arr[0]);
+  graduate();
 
- // for printing and handling arr: *arr[0][2], info[0][3]
+ /* for printing and handling arr: *arr[0][2], info[0][3]
  printf("HI THIS IS FROM MAIN*******************\n");
         for (int i = 0; i < 8;i++)
         {
@@ -76,6 +79,6 @@ int main()
         printf("\n");
         }
 
-
+ */
  return 0;
 }

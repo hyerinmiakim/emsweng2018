@@ -28,7 +28,7 @@ char(*funnel(char* _csvfile))[max]
                 j = 2;
 	else if (ch[i] == 'd')
                 j = 3;
-	else if (ch[i] == 'X')
+	else if (ch[i] == 'e')
 		j = 4;
 	
 	//j will be 999 when data don't have alphabet (normal data)
