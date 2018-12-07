@@ -15,7 +15,7 @@ void gpa(char* std_num)
 
  //if you want to finish saving grade, put 'z'
  //otherwise put your subject&grade
- do{
+// do{
 
   printf("Enter your subjects : \n");
   fgets(subj,50,stdin);
@@ -31,8 +31,8 @@ void gpa(char* std_num)
   else  printf("fail\n");
   
   if(subj == "0")
-    break;
- }while(1);
+//    break;
+// }while(1);
 
 
  fclose(fp);

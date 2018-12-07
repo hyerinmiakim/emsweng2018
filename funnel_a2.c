@@ -28,6 +28,8 @@ char(*funnel(char* _csvfile))[max]
                 j = 2;
 	else if (ch[i] == 'd')
                 j = 3;
+	else if (ch[i] == 'X')
+		j = 4;
 	
 	//j will be 999 when data don't have alphabet (normal data)
 	if (j!=999) // when data is alphabet, this code parses data.
