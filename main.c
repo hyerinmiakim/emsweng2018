@@ -43,15 +43,14 @@ int main()
  //remove enter key
  if((p = strchr(name, '\n'))!= NULL)   *p = '\0';
  if((p = strchr(std_num, '\n'))!= NULL)   *p = '\0';
- if((p = strchr(subj, '\n'))!= NULL)   *p = '\0';
+ //if((p = strchr(subj, '\n'))!= NULL)   *p = '\0';
  //if(!(grade == '\n'))   *p = '\0';
 
  // save in the text file.
  sprintf(full_path,"%s%s",std_num,".txt");
- fp = fopen(full_path,"w");
+ fp = fopen(full_path,"at");
  if(fp != 0)
  {
-  fprintf(fp, "%s %s\n", name, std_num);   
   fclose(fp);
  }
  else  printf("fail\n");
