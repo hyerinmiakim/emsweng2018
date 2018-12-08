@@ -5,7 +5,6 @@ char subj[50];
 char grade[10];
 char *end = "finish";
 
-
 void gpa(char* std_num)
 {
  FILE *fp = NULL;
@@ -16,6 +15,12 @@ void gpa(char* std_num)
  fp = fopen(full_path,"a");
 
 
+ // save information of subject in the text file.
+  char *psubj = '\0';
+  char(*arr)[max] = funnel("2018_ese.csv.0");
+
+
+
  //if you want to finish saving grade, put 'e'
  //otherwise put your subject&grade
 
@@ -23,40 +28,28 @@ while(1)
 {
 
 // input subject name.
-  printf("Enter your subjects. if you want to finish, enter 'finish': \n");
+  printf("과목명을 입력하세요(더이상 저장할 과목이 없을 때, 'finish'를 입력하세요)'\n");
   fgets(subj,50,stdin);
   *(subj +strlen(subj)-1)='\0';
   if(strcmp(subj,end) == 0) break;
 
-  printf("Enter your grade : \n");
+// input grade.
+  printf("성적을 입력하세요(A+는 4.5 / A는 4 ...):\n");
   fgets(grade,10,stdin);
   *(grade +strlen(grade)-1)='\0';
   if(strcmp(grade,end) == 0) break;
 
+  psubj = subj;
+  get_the_info(psubj, &arr[0]);
 
-  // save data in the text file.
+// save data in the text file.
   if(fp != 0)
   {
-   fprintf(fp, "%s %s \n",subj ,grade ); 
+   fprintf(fp, "%s %s %c\n",subj ,grade, info[4][0]); 
   }
   else  printf("fail\n");
-
-// save information of subject in the text file.
- char *psubj = '\0';
-       psubj = subj;
- char(*arr)[max] = funnel("2018_ese.csv.0");
- get_the_info(psubj, &arr[0]);
-
- for (i = 0; i < 8;i++)
- {
-  for (j = 0; j < max; j++)
-  {
-   fprintf(fp,"%c ", info[i][j]);
-  }
  }
-  printf("\n");
-}
 
-
- fclose(fp);
+fclose(fp);
+return;
 }

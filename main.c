@@ -27,18 +27,15 @@ int main()
  FILE *fp = NULL;
 
 
- printf("Enter you NAME :\n"); 
+ printf("이름을 입력하세요:\n"); 
  fgets(name,100, stdin);
 
- printf("Enter your STUDENT NUMBER :\n"); 
+ printf("학번을 입력하세요:\n"); 
  fgets(std_num,20,stdin);
-
 
  //remove enter key
  if((p = strchr(name, '\n'))!= NULL)   *p = '\0';
  if((p = strchr(std_num, '\n'))!= NULL)   *p = '\0';
-
-
 
  // save in the text file.
  sprintf(full_path,"%s%s",std_num,".txt");
