@@ -32,10 +32,10 @@ int main()
  printf("Enter your STUDENT NUMBER :\n"); 
  fgets(std_num,20,stdin);
 
-
+/*
  printf("Enter your subjects : \n");
  fgets(subj,50,stdin);
-/*
+
  printf("Enter your grade : \n");
  fgets(&grade,2,stdin);
 */
@@ -51,13 +51,11 @@ int main()
  fp = fopen(full_path,"w");
  if(fp != 0)
  {
-  fprintf(fp, "%s %s %s\n", name,std_num, subj);   
-  //fprintf(fp, "%s %s", name,std_num);   
+  fprintf(fp, "%s %s\n", name, std_num);   
   fclose(fp);
  }
  else  printf("fail\n");
  
-
  gpa(std_num);
 
 

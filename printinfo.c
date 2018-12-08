@@ -13,13 +13,14 @@ char(*get_the_info(char* sub, void *_minor))[max]
 char (*arr)[max];
 arr = _minor;
 int len = strlen(sub);
+int h,i,j=0;
 char str[len]; //for searching
 
-for (int h = 0; h < 8; h++)
+for (h = 0; h < 8; h++)
 {
-for (int i = 0; i < max/2; i++)
+for (i = 0; i < max/2; i++)
 {
-	for (int j = 0; j < len; j++)
+	for (j = 0; j < len; j++)
 		str[j] = arr[h][i+j]; // now searching at section 'b' 
 
 	//compare user's parameter with data in minor arr.
@@ -35,8 +36,8 @@ for (int i = 0; i < max/2; i++)
  	   temp--;
 	 }
 	 // temp will know where the first comma is.
-	 int n = 0, v = 0; // n for column, v for row
-	 for (int k = temp - 13; k < i;k++)
+	 int n = 0, v = 0, k = 0; // n for column, v for row
+	 for (k = temp - 13; k < i;k++)
 	 {//the reason why 12 is 'size of each korean character(3)' * 'number of korean character(4)' 
 		if (arr[h][k] == ',')
                         {printf(" "); n++; v=0; continue;}

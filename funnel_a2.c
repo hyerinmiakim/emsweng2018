@@ -16,7 +16,7 @@ char(*funnel(char* _csvfile))[max]
 
   read(fd, ch, max-1);
   ch[max-1] = '\0';
-  int i = 0, j = 999, start = 0, temp = 0;
+  int i = 0, j = 999, start = 0, temp = 0,k=0;
   while(ch[i] != '\0')
   {
 	// classify data as alphabet
@@ -38,7 +38,7 @@ char(*funnel(char* _csvfile))[max]
 	 while(minor[j][w] != '\0')
 		w++;
 
-	 for (int k=start; k<(i-1); k++) // 'start' knows the locations we should read
+	 for (k=start; k<(i-1); k++) // 'start' knows the locations we should read
 	 { 
  	  //if (ch[k] == ',')
   	    //continue;
