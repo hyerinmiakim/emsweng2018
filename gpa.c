@@ -16,14 +16,18 @@ void gpa(char* std_num)
 
  //if you want to finish saving grade, put 'e'
  //otherwise put your subject&grade
-// do{
 
+while(1)
+{
   printf("Enter your subjects. if you want to finish, enter 'finish': \n");
   fgets(subj,50,stdin);
   *(subj +strlen(subj)-1)='\0';
+  if(strcmp(subj,end) == 0) break;
+  
   printf("Enter your grade : \n");
   fgets(grade,10,stdin);
   *(grade +strlen(grade)-1)='\0';
+  if(strcmp(grade,end) == 0) break;
 
   // save data in the text file.
   if(fp != 0)
@@ -31,8 +35,7 @@ void gpa(char* std_num)
    fprintf(fp, "%s %s \n",subj ,grade ); 
   }
   else  printf("fail\n");
-
-// }while(strcmp(subj,end));
+}
 
  fclose(fp);
 }
