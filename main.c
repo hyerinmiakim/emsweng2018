@@ -6,10 +6,12 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#include "printGrades.c"
 #include "funnel_a2.c"
 #include "printinfo.c"
 #include "gpa.c"
 #include "graduate.c"
+
 
 char(*funnel(char* _csvfile))[max];
 char(*get_the_info(char* sub, void *_minor))[max];
@@ -46,13 +48,20 @@ int main()
  }
  else  printf("fail\n");
 
+ //gpa(std_num);
+ printGrades(std_num);
 
-  gpa(std_num);  
-  graduate();
+//  graduate();
 
+/* 
+ // for printing and handling arr: *arr[0][2], info[0][3]
+   	printf("HI THIS IS FROM MAIN*******************\n");
+  char *psubj = '\0';
+  char(*arr)[max] = funnel("2018_ese.csv.0");
+  float grd = 0.0;
+  psubj = "랜덤프로세스";
+  get_the_info(psubj, &arr[0]);
 
- /* for printing and handling arr: *arr[0][2], info[0][3]
-    printf("HI THIS IS FROM MAIN*******************\n");
 	for ( i = 0; i < 8;i++)
 	{
 	  for ( j = 0; j < max; j++)
@@ -61,7 +70,7 @@ int main()
 	  }
 	  printf("\n");
 	}
-*/
 
+*/
  return 0;
 }
