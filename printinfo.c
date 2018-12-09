@@ -26,7 +26,7 @@ for (i = 0; i < max/2; i++)
 	//compare user's parameter with data in minor arr.
 	if (!strncmp(sub, str,len-1))
 	{
-	 // printf("str is same w/ str --- %s\n",str);
+	  printf("str is same w/ str --- %s\n",str);
 	 int temp = i;	//remember the index of 'a start point of subject'
 	 int cnt = 0; 
 	 while (cnt < 4) //count the number of ','
@@ -37,7 +37,7 @@ for (i = 0; i < max/2; i++)
 	 }
 	 // temp will know where the first comma is.
 	 int n = 0, v = 0, k = 0; // n for column, v for row
-	 for (k = temp - 13; k < i;k++)
+	 for (k = temp - 11; k < i;k++)
 	 {
 //the reason why 12 is 'size of each korean character(3)' * 'number of korean character(4)' 
 		if (arr[h][k] == ',')
@@ -48,6 +48,15 @@ for (i = 0; i < max/2; i++)
         }
 }
 }
+
+for (int i = 0; i < 8;i++)
+        {
+         for (int j = 0; j < max; j++)
+         {
+                printf("%c", info[i][j]);
+         }
+        printf("\n");
+        }
 
 return info;
 }
