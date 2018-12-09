@@ -18,7 +18,7 @@ void gpa(char* std_num)
 
  // save information of subject in the text file.
   char *psubj = '\0';
-  char(*arr)[max] = funnel("2018_ese.csv.0");
+  char(*arr)[max] = funnel("new_2018_ese.csv.0");
   float grd = 0.0;
 
 while(1)
