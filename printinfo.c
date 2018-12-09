@@ -16,7 +16,7 @@ int len = strlen(sub);
 int h,i,j=0;
 char str[len]; //for searching
 
-for (h = 0; h < 8; h++)
+for (h = 0; h < 7; h++)
 {
 for (i = 0; i < max/2; i++)
 {
@@ -38,7 +38,8 @@ for (i = 0; i < max/2; i++)
 	 // temp will know where the first comma is.
 	 int n = 0, v = 0, k = 0; // n for column, v for row
 	 for (k = temp - 13; k < i;k++)
-	 {//the reason why 12 is 'size of each korean character(3)' * 'number of korean character(4)' 
+	 {
+//the reason why 12 is 'size of each korean character(3)' * 'number of korean character(4)' 
 		if (arr[h][k] == ',')
                         {printf(" "); n++; v=0; continue;}
                 info[n][v] = arr[h][k];

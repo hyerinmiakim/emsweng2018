@@ -25,7 +25,6 @@ int main()
  char full_path[150];
  char* p;
  int i,j;
-
  FILE *fp = NULL;
 
 
@@ -44,33 +43,14 @@ int main()
  fp = fopen(full_path,"at");
  if(fp != 0)
  {
-  fclose(fp);
+  fclose(fp); // create txt file
  }
- else  printf("fail\n");
+ else printf("fail\n");
 
- //gpa(std_num);
+ gpa(std_num);
  printGrades(std_num);
+ graduate();
 
-//  graduate();
 
-/* 
- // for printing and handling arr: *arr[0][2], info[0][3]
-   	printf("HI THIS IS FROM MAIN*******************\n");
-  char *psubj = '\0';
-  char(*arr)[max] = funnel("2018_ese.csv.0");
-  float grd = 0.0;
-  psubj = "랜덤프로세스";
-  get_the_info(psubj, &arr[0]);
-
-	for ( i = 0; i < 8;i++)
-	{
-	  for ( j = 0; j < max; j++)
-	  {
-	   printf("%c", info[i][j]);
-	  }
-	  printf("\n");
-	}
-
-*/
  return 0;
 }

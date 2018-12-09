@@ -9,8 +9,7 @@ void gpa(char* std_num)
 {
  FILE *fp = NULL;
  int i,j;
-  char studentData[50];    // 파일을 읽을 때 사용할 임시 공간
-  char path[150];
+
 
 
  // open the text file.
@@ -40,16 +39,17 @@ while(1)
   psubj = subj;
   get_the_info(psubj, &arr[0]);
 
-	if(strcmp(grade,"A+")==0) grd = 4.5;
-	if(strcmp(grade,"A0")==0) grd = 4.0;
-	if(strcmp(grade,"B+")==0) grd = 3.5;
-	if(strcmp(grade,"B0")==0) grd = 3.0;
-	if(strcmp(grade,"C+")==0) grd = 2.5;
+	if(strcmp(grade,"A+")==0 || strcmp(grade,"a+")==0) grd = 4.5;
+	if(strcmp(grade,"A0")==0 || strcmp(grade,"a0")==0) grd = 4.0;
+	if(strcmp(grade,"B+")==0 || strcmp(grade,"b+")==0) grd = 3.5;
+	if(strcmp(grade,"B0")==0 || strcmp(grade,"b0")==0) grd = 3.0;
+	if(strcmp(grade,"C+")==0 || strcmp(grade,"c+")==0) grd = 2.5;
+
 
 // save data in the text file.
   if(fp != 0)
   {
-    fprintf(fp, "%s,%.1f,%d\n", subj ,grd, (info[4][0]-48)); 
+    fprintf(fp, "%s %.1f %d %c\n", subj ,grd, (info[3][0]-48), info[2][0]); 
   }
   else  printf("fail\n");
  }

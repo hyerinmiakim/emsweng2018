@@ -9,5 +9,5 @@ void graduate()
 	printf("%c", info[0][i]);
   }
   printf(" and Credit is %d. \n", cnt);
- }
+}
 
