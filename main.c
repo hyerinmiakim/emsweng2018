@@ -10,12 +10,10 @@
 #include "funnel_a2.c"
 #include "printinfo.c"
 #include "gpa.c"
-#include "graduate.c"
-
+//#include "graduate.c"
 
 char(*funnel(char* _csvfile))[max];
 char(*get_the_info(char* sub, void *_minor))[max];
-void graduate();
 
 
 int main()
@@ -26,6 +24,7 @@ int main()
  char* p;
  int i,j;
  FILE *fp = NULL;
+ 
 
 
  printf("이름을 입력하세요:\n"); 
@@ -49,7 +48,7 @@ int main()
 
  gpa(std_num);
  printGrades(std_num);
- graduate();
+ //graduate();
 
 
  return 0;

@@ -37,13 +37,17 @@ for (i = 0; i < max/2; i++)
 	 }
 	 // temp will know where the first comma is.
 	 int n = 0, v = 0, k = 0; // n for column, v for row
-	 for (k = temp - 11; k < i;k++)
+	 for (k = temp - 11; k < i+(len+2);k++)
 	 {
 //the reason why 12 is 'size of each korean character(3)' * 'number of korean character(4)' 
 		if (arr[h][k] == ',')
                         {printf(" "); n++; v=0; continue;}
                 info[n][v] = arr[h][k];
 		v++;
+	 }
+	// for (k = i; k < len+3; k++)
+	 {
+		
 	 }
         }
 }
