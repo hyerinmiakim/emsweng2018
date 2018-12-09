@@ -48,7 +48,7 @@ int main()
 
  gpa(std_num);
  printGrades(std_num);
- //graduate();
+ 
 
 
  return 0;
