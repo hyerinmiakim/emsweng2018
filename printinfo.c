@@ -29,7 +29,7 @@ for (i = 0; i < max/2; i++)
 	  printf("str is same w/ str --- %s\n",str);
 	 int temp = i;	//remember the index of 'a start point of subject'
 	 int cnt = 0; 
-	 while (cnt < 4) //count the number of ','
+	 while (cnt < 5) //count the number of ','
 	 {
 	   if (arr[h][temp] == ',')
 		cnt++;
