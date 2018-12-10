@@ -18,11 +18,13 @@ void gpa(char* std_num)
 
  // save information of subject in the text file.
   char *psubj = '\0';
-  //char(*arr)[max] = funnel("new_2018_ese.csv.0");
+  char(*arr)[max] = funnel("new_2018_ese.csv.0");
+
   float grd = 0.0;
   int flag = 0;
   int a=0, b = 0, c = 0;
   strcpy(subarr,"\0");
+
 while(1)
 {
 // input subject name.
@@ -30,7 +32,7 @@ while(1)
   fgets(subj,50,stdin);
   *(subj +strlen(subj)-1)='\0';
 
- if((strcmp(grade,end)==0) || (strcmp(subj, end)==0))
+ if(strcmp(subj,end)==0 || strcmp(grade,end)==0)
   {
         flag = 1;
         break;
@@ -41,10 +43,14 @@ while(1)
   fgets(grade,10,stdin);
   *(grade +strlen(grade)-1)='\0';
 
+
+  psubj = subj;
+  get_the_info(psubj, &arr[0]);
+
 // make subject array
   strcat(subj,"--");
   strcat(subarr, subj);
-  printf("%s\n", subarr);
+  //printf("%s\n", subarr);
 
   if(strcmp(grade,"A+")==0 || strcmp(grade,"a+")==0) grd = 4.5;
   if(strcmp(grade,"A0")==0 || strcmp(grade,"a0")==0) grd = 4.0;
@@ -56,15 +62,14 @@ while(1)
 // save data in the text file.
   if(fp != 0)
   {
-    fprintf(fp, "%s %.1f %d %c\n", subj ,grd, (info[3][0]-48), info[2][0]);  
+    fprintf(fp, "%s %.1f %d %c\n", subj ,grd, (info[4][0]-48), info[2][0]);  
   }
   else  printf("fail\n");
- }
+}
 
 // after receive subjects from user 
-if (flag == 1)
-{
-	graduate(subarr, flag);
+if (flag == 1)	graduate(subarr, flag);
+
 	/*int hy = 0;
 	printf("HERE!!\n");
 	//while(subarr[hy] != '\0')
@@ -72,7 +77,6 @@ if (flag == 1)
 	 printf("%s\n", subarr);
 //	 graduate(subarr); 
 	*/
-}
 
 /*int st = 0;
 for (int i = 0; i < strlen(subarr); i++)

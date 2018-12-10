@@ -53,11 +53,13 @@ char(*funnel(char* _csvfile))[max]
   // printf("%c", ch[i]);
    i++;
   }
+/*
 int e = 0;
 while(minor[3][e] != '\0')
 {	printf("%c", minor[3][e]);
 	e++;
 }
+*/
 printf("reading finish. \n");
 return minor;
 

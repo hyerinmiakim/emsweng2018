@@ -26,16 +26,16 @@ int main()
  FILE *fp = NULL;
  
 
-
  printf("이름을 입력하세요:\n"); 
  fgets(name,100, stdin);
-
  printf("학번을 입력하세요:\n"); 
  fgets(std_num,20,stdin);
 
- //remove enter key
+ // remove enter key
  if((p = strchr(name, '\n'))!= NULL)   *p = '\0';
  if((p = strchr(std_num, '\n'))!= NULL)   *p = '\0';
+
+
 
  // save in the text file.
  sprintf(full_path,"%s%s",std_num,".txt");
@@ -45,6 +45,8 @@ int main()
   fclose(fp); // create txt file
  }
  else printf("fail\n");
+
+
 
  gpa(std_num);
  printGrades(std_num);

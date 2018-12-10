@@ -54,9 +54,9 @@ for (i = 0; i < max/2; i++)
 }
 }
 
-for (int i = 0; i < 8;i++)
+for (i = 0; i < 8;i++)
         {
-         for (int j = 0; j < max; j++)
+         for (j = 0; j < max; j++)
          {
                 printf("%c", info[i][j]);
          }

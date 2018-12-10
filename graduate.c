@@ -4,16 +4,17 @@ void graduate(char* subarr, int flag)
   char(*arr)[max] = funnel("new_2018_ese.csv.0"); 
   printf("********HELLO THIS IS GRADUATE*********\n%s\n", subarr);
   int hy = 0;
-   int cnt[5] = {0,0,0,0,0}; 
+  int cnt[5] = {0,0,0,0,0}; 
+  int i, j;
+  int st = 0;
 
-int st = 0;
-for (int i = 0; i < strlen(subarr); i++)
+for (i = 0; i < strlen(subarr); i++)
 {
 	if(subarr[i] == '-')
 	{
 	 char frag[50] = {"\0"};
 	 int index = 0;
-	 for(int j = st; j < i; j++)
+	 for(j = st; j < i; j++)
 	 {
 	  frag[index] = subarr[j];
 	  index++;
