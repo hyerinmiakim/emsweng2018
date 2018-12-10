@@ -3,8 +3,8 @@
 #define max 10000
 
 char full_path[150];
-char subj[50] = {"\0"};
-char grade[2] = {"\0"};
+char subj[50];
+char grade[10];
 char *end = "finish";
 char subarr[50];
 
@@ -30,13 +30,14 @@ void gpa(char* std_num)
 
 while(1)
 {
+ 
 // input subject name.
   printf("● 과목명을 입력하세요(더이상 저장할 과목이 없을 때, 'finish'를 입력하세요)\n");
   fgets(subj,50,stdin);
   *(subj +strlen(subj)-1)='\0';
 //<<<<<<< HEAD
  
- if((strcmp(subj,end)==0) || (strcmp(grade, end)==0))
+if(strcmp(subj,end)==0 || strcmp(grade,end)==0)
 
   {
         flag = 1;
@@ -45,12 +46,14 @@ while(1)
 
 // input grade.
   printf("● 성적을 입력하세요 (A+,A0,B+ ..등)\n");
-  fgets(grade,2,stdin);
+  fgets(grade,10,stdin);
   *(grade +strlen(grade)-1)='\0';
+ 
 //<<<<<<< HEAD
  
   psubj = subj;
   get_the_info(psubj, &arr[0]);
+
 /*=======
 
 
@@ -69,7 +72,9 @@ while(1)
   if(strcmp(grade,"B+")==0 || strcmp(grade,"b+")==0) grd = 3.5;
   if(strcmp(grade,"B0")==0 || strcmp(grade,"b0")==0) grd = 3.0;
   if(strcmp(grade,"C+")==0 || strcmp(grade,"c+")==0) grd = 2.5;
-
+// make subject array
+  strcat(subj,"--");
+  strcat(subarr, subj);
  if(fp != 0)
   {
 //<<<<<<< HEAD
@@ -79,9 +84,7 @@ while(1)
   else  printf("fail\n");
 
 
-// make subject array
-  strcat(subj,"--");
-  strcat(subarr, subj);
+
  // printf("%s\n", subarr);
 
   // save data in the text file.
