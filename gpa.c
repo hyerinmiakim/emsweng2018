@@ -20,10 +20,10 @@ void gpa(char* std_num)
  // save information of subject in the text file.
   char *psubj = '\0';
   char(*arr)[max] = funnel("new_2018_ese.csv.0");
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 
->>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
+//>>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
   float grd = 0.0;
   int flag = 0;
   strcpy(subarr,"\0");
@@ -34,13 +34,10 @@ while(1)
   printf("● 과목명을 입력하세요(더이상 저장할 과목이 없을 때, 'finish'를 입력하세요)\n");
   fgets(subj,50,stdin);
   *(subj +strlen(subj)-1)='\0';
-<<<<<<< HEAD
+//<<<<<<< HEAD
  
  if((strcmp(subj,end)==0) || (strcmp(grade, end)==0))
-=======
 
- if(strcmp(subj,end)==0 || strcmp(grade,end)==0)
->>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
   {
         flag = 1;
         break;
@@ -50,11 +47,11 @@ while(1)
   printf("● 성적을 입력하세요 (A+,A0,B+ ..등)\n");
   fgets(grade,2,stdin);
   *(grade +strlen(grade)-1)='\0';
-<<<<<<< HEAD
+//<<<<<<< HEAD
  
   psubj = subj;
   get_the_info(psubj, &arr[0]);
-=======
+/*=======
 
 
   psubj = subj;
@@ -66,7 +63,8 @@ while(1)
   //printf("%s\n", subarr);
 
 >>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
-  if(strcmp(grade,"A+")==0 || strcmp(grade,"a+")==0) grd = 4.5;
+ */
+ if(strcmp(grade,"A+")==0 || strcmp(grade,"a+")==0) grd = 4.5;
   if(strcmp(grade,"A0")==0 || strcmp(grade,"a0")==0) grd = 4.0;
   if(strcmp(grade,"B+")==0 || strcmp(grade,"b+")==0) grd = 3.5;
   if(strcmp(grade,"B0")==0 || strcmp(grade,"b0")==0) grd = 3.0;
@@ -74,7 +72,7 @@ while(1)
 
  if(fp != 0)
   {
-<<<<<<< HEAD
+//<<<<<<< HEAD
     
     fprintf(fp, "%s %.1f %d %c\n", psubj ,grd, (info[4][0] - 48), info[2][0]);  
   }
@@ -93,7 +91,7 @@ while(1)
 // after receive subjects from user 
 if (flag == 1)	graduate(subarr);
 //	fprintf(fp, " %d\n", (info[3][0] - 48));
-=======
+/*=======
     fprintf(fp, "%s %.1f %d %c\n", subj ,grd, (info[4][0]-48), info[2][0]);  
   }
   else  printf("fail\n");
@@ -102,7 +100,8 @@ if (flag == 1)	graduate(subarr);
 // after receive subjects from user 
 if (flag == 1)	graduate(subarr, flag);
 
->>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
+>>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413*/
+
 	/*int hy = 0;
 	printf("HERE!!\n");
 	//while(subarr[hy] != '\0')

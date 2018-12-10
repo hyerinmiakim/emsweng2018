@@ -25,17 +25,17 @@ int main()
  FILE *fp = NULL;
  
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
  printf("● 이름을 입력하세요:\n"); 
  fgets(name,100, stdin);
 
  printf("● 학번을 입력하세요:\n"); 
-=======
+/*=======
  printf("이름을 입력하세요:\n"); 
  fgets(name,100, stdin);
  printf("학번을 입력하세요:\n"); 
->>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
+>>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413*/
  fgets(std_num,20,stdin);
 
  // remove enter key

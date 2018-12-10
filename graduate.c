@@ -2,16 +2,16 @@
 void graduate(char* subarr)
 {
   char(*arr)[max] = funnel("new_2018_ese.csv.0"); 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //  printf("********HELLO THIS IS GRADUATE*********\n%s\n", subarr);
    int cnt[5] = {0,0,0,0,0}; 
   int i, j = 0, q=0,w=0;
-=======
+/*=======
   printf("********HELLO THIS IS GRADUATE*********\n%s\n", subarr);
   int hy = 0;
   int cnt[5] = {0,0,0,0,0}; 
   int i, j;
->>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
+>>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413*/
   int st = 0;
 
 for (i = 0; i < strlen(subarr); i++)

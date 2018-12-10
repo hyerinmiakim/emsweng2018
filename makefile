@@ -2,7 +2,7 @@ CC = gcc
 CFLAGS = -Wall
 all:
 	$(CC) $(CFLAGS) main.c -o main
-	ar rv libfuncs.a main *.c *.txt new_2018_ese.csv.0
+	ar rv libfuncs.a main *.c new_2018_ese.csv.0
 
 main.c: funnel_a2.c printinfo.c gpa.c printGrades.c
 	
