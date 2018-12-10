@@ -58,9 +58,13 @@ for (i = 0; i < max/2; i++)
 }
 }
 
+<<<<<<< HEAD
 /*for (int i = 0; i < 8;i++)
+=======
+for (i = 0; i < 8;i++)
+>>>>>>> e3dd49d2eb12219ec37a74a835a98ff213cd4413
         {
-         for (int j = 0; j < max; j++)
+         for (j = 0; j < max; j++)
          {
                 printf("%c", info[i][j]);
          }
