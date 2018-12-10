@@ -1,27 +1,35 @@
 #include <stdio.h>
-void graduate(char* subarr, int flag)
+void graduate(char* subarr)
 {
   char(*arr)[max] = funnel("new_2018_ese.csv.0"); 
-  printf("********HELLO THIS IS GRADUATE*********\n%s\n", subarr);
-  int hy = 0;
+//  printf("********HELLO THIS IS GRADUATE*********\n%s\n", subarr);
    int cnt[5] = {0,0,0,0,0}; 
+  int i, j = 0, q=0,w=0;
+  int st = 0;
 
-int st = 0;
-for (int i = 0; i < strlen(subarr); i++)
+for (i = 0; i < strlen(subarr); i++)
 {
 	if(subarr[i] == '-')
 	{
 	 char frag[50] = {"\0"};
 	 int index = 0;
-	 for(int j = st; j < i; j++)
+	 for(j = st; j < i; j++)
 	 {
 	  frag[index] = subarr[j];
 	  index++;
 	 }
-	 printf("This is frag: %s\n", frag);
+	
+//	 printf("This is frag: %s\n", frag);
 	 printf("**********INFORMATION************\n");	 
 	 get_the_info(frag, &arr[0]);
-         printf("\n****************************************\n");
+         for (q = 0; q < 8;q++)
+        {
+         for (w = 0; w < max; w++)
+         {
+                printf("%c", info[q][w]);
+         }
+        printf("\n");
+        }
 
 	// check cnt from info	
 	switch(info[6][1])
@@ -52,7 +60,8 @@ for (int i = 0; i < strlen(subarr); i++)
 
 
 }
-printf("현재 교양필수는 %d점, 전공기초는 %d점, 전공선택은 %d점, 전공필수는 %d점, 일반선택은 %d점 이수함\n", cnt[0], cnt[1], cnt[2], cnt[3], cnt[4]);
+printf("현재 교양필수는 %d점, 전공기초는 %d점, 전공선택은 %d점, 전공필수는 %d점, 일반선택은 %d점 이수함. \n", cnt[0], cnt[1], cnt[2], cnt[3], cnt[4]);
+printf("졸업을 위해서는 총 140점을 이수해야하며. 전공은 72학점 이상, 교양은 30~55학점 이내로 이수하여야 합니다. \n 졸업요건을 충족하기 위해선 전공 %d학점, 교양 %d학점이 남았습니다. 또한, 전체충족학점을 채우기 위해선 %d학점이 남았습니다. ", (72-(cnt[1]+cnt[2]+cnt[3])), (55 - cnt[0]), (140 - (cnt[0]+cnt[1]+cnt[2]+cnt[3]+cnt[4])));
 	//get_the_info(subarr, &arr[0]);
 
 

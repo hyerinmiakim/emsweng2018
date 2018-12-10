@@ -16,7 +16,7 @@ char(*funnel(char* _csvfile))[max]
 
   read(fd, ch, max-1);
   ch[max-1] = '\0';
-  int i = 0, j = 999, start = 0, temp = 0,k=0;
+  int i = 0, j = 999, start = 0,k=0;
   while(ch[i] != '\0')
   {
 	// classify data as alphabet
@@ -53,12 +53,12 @@ char(*funnel(char* _csvfile))[max]
   // printf("%c", ch[i]);
    i++;
   }
-int e = 0;
+/*int e = 0;
 while(minor[3][e] != '\0')
 {	printf("%c", minor[3][e]);
 	e++;
-}
-printf("reading finish. \n");
+}*/
+//printf("reading finish. \n");
 return minor;
 
 }

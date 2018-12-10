@@ -12,25 +12,24 @@
 #include "gpa.c"
 //#include "graduate.c"
 
-char(*funnel(char* _csvfile))[max];
-char(*get_the_info(char* sub, void *_minor))[max];
+//char(*funnel(char* _csvfile))[max];
+//char(*get_the_info(char* sub, void *_minor))[max];
 
 
 int main()
 {
  // input
- char name[100], std_num[20], grade = '\0', subj[50];
+ char name[100], std_num[20];
  char full_path[150];
  char* p;
- int i,j;
  FILE *fp = NULL;
  
 
 
- printf("이름을 입력하세요:\n"); 
+ printf("● 이름을 입력하세요:\n"); 
  fgets(name,100, stdin);
 
- printf("학번을 입력하세요:\n"); 
+ printf("● 학번을 입력하세요:\n"); 
  fgets(std_num,20,stdin);
 
  //remove enter key

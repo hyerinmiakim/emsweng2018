@@ -10,13 +10,13 @@ char(*get_the_info(char* sub, void *_minor))[max]
 	perror("READING SUBJECT ERROR");
 	exit(0);
   }
-printf("HELOO\n");
+//printf("\n●  START PRINTINFO ● \n");
 char (*arr)[max];
 arr = _minor;
 int len = strlen(sub);
 int h,i,j=0;
 char str[len]; //for searching
-printf("%s", sub);
+//printf("%s", sub);
 for (h = 0; h < 7; h++)
 {
 for (i = 0; i < max/2; i++)
@@ -54,7 +54,7 @@ for (i = 0; i < max/2; i++)
 }
 }
 
-for (int i = 0; i < 8;i++)
+/*for (int i = 0; i < 8;i++)
         {
          for (int j = 0; j < max; j++)
          {
@@ -62,7 +62,7 @@ for (int i = 0; i < 8;i++)
          }
         printf("\n");
         }
-
+*/
 return info;
 }
 
