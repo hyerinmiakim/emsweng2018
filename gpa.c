@@ -3,8 +3,8 @@
 #define max 10000
 
 char full_path[150];
-char subj[50];
-char grade[10];
+char subj[50] = {"\0"};
+char grade[2] = {"\0"};
 char *end = "finish";
 char subarr[50];
 
@@ -29,7 +29,7 @@ while(1)
   printf("● 과목명을 입력하세요(더이상 저장할 과목이 없을 때, 'finish'를 입력하세요)\n");
   fgets(subj,50,stdin);
   *(subj +strlen(subj)-1)='\0';
- // clearBuffer();
+ 
  if((strcmp(subj,end)==0) || (strcmp(grade, end)==0))
   {
         flag = 1;
@@ -38,7 +38,7 @@ while(1)
 
 // input grade.
   printf("● 성적을 입력하세요 (A+,A0,B+ ..등)\n");
-  fgets(grade,10,stdin);
+  fgets(grade,2,stdin);
   *(grade +strlen(grade)-1)='\0';
  
   psubj = subj;

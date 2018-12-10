@@ -4,12 +4,19 @@ char info[8][max] = {"\0"}; //return array. it has only info of subject that use
 
 char(*get_the_info(char* sub, void *_minor))[max]
 {
-
+  
   if(*sub == '\0')
   {
 	perror("READING SUBJECT ERROR");
 	exit(0);
   }
+ for (int a = 0; a < 7;a++)
+{
+	for (int b=0;b<max/2;b++)
+	{
+		info[a][b] = '\0';
+	}
+}
 //printf("\n●  START PRINTINFO ● \n");
 char (*arr)[max];
 arr = _minor;
@@ -46,10 +53,7 @@ for (i = 0; i < max/2; i++)
                 info[n][v] = arr[h][k];
 		v++;
 	 }
-	// for (k = i; k < len+3; k++)
-	 {
-		
-	 }
+	 info[n][v]='\n';
         }
 }
 }
